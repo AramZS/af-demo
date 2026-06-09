@@ -11,15 +11,15 @@ nav
     align-items: center
     padding: 1.25rem 2.5rem
     backdrop-filter: blur(10px)
-    background: rgba(0, 0, 0, 0.25)
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1)
+    background: var(--background)
+    border-bottom: 1px solid var(--background-muted)
+    color: var(--foreground)
 
     .logo
         font-size: 1.1rem
         font-weight: 600
         letter-spacing: 0.08em
         text-transform: uppercase
-        color: #fff
 
     ul
         list-style: none
@@ -28,7 +28,7 @@ nav
         margin: 0 auto
 
         & li a
-            color: rgba(255, 255, 255, 0.85)
+            color: var(--foreground)
             text-decoration: none
             font-size: 0.875rem
             letter-spacing: 0.05em
