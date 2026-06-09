@@ -1,0 +1,13 @@
+/*
+		*	Web Package
+		*/ 
+
+
+/* Owners Wide Bold */
+		@font-face {
+			font-family: "Owners Wide Bold";
+			font-weight: 700;
+			font-style: regular;
+			font-display: swap;
+			src:url('woff2/OwnersWide-Bold.woff2') format('woff2'), url('woff/OwnersWide-Bold.woff') format('woff');
+		}
