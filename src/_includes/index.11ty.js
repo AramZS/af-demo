@@ -21,7 +21,7 @@ module.exports = async function (data) {
 	</section>
 	<section class="hero title-section">
 		<h1 class="center">ALFALFA</h1>
-		<h3 class="center">An eco-noir</h3>
+		<h3 class="center">An eco-noir by Jack Fessenden</h3>
 	</section>
 
   </section>

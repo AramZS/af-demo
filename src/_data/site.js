@@ -28,6 +28,14 @@ let data = {
 	defaultImage: process.env.DOMAIN + "/assets/favicon.png",
 	serviceWorkerVer: `${randomVer()}-${Date.now()}`,
 	playOrder: "ascending", // ascending or descending
+	nav: {
+		film: "film",
+		team: "team",
+		cast: "cast",
+		impact: "impact",
+		location: "location",
+		funds: "funds",
+	}
 };
 
 
