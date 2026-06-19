@@ -10,6 +10,7 @@ module.exports = async function (data) {
 		${data.content}
 
   </section>
+  <script src="/assets/scripts/page.js"></script>
 `,
 	};
 	return base(data, insert);

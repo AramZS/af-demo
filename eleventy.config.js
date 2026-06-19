@@ -501,16 +501,35 @@ module.exports = async function (eleventyConfig) {
 	});
 
 	eleventyConfig.addShortcode('photoset', function(arg) {
+		
+		function fibonacci(num) {
+			let num1 = 0;
+			let num2 = 1;
+			let sum;
+			if (num === 1) {
+				return num1;
+			} else if (num === 2) {
+				return num2;
+			} else {
+				for (let i = 3; i <= num; i++) {
+					sum = num1 + num2;
+					num1 = num2;
+					num2 = sum;
+				}
+				return num2;
+			}
+		}
 		// https://codepen.io/cbolson/pen/MYgrjrm
 		let string = '';
 		for (let i = 0; i < arguments.length; i++) {
-			string += /*html*/ `  <input type="radio" id="radio-${i}" name="radio-card" checked>
-  <article class="card" style="--angle:${(i + 7 * 51) % 9}deg">
-    <img class="card-img" src="/assets/imgs/${arguments[i]}">
+			var argumentItemSet = arguments[i] = arguments[i].trim().split(',');
+			string += /*html*/ `  <input type="radio" id="radio-${i}" name="radio-card" ${i === 0 ? "checked" : ""}>
+  <article class="card" style="--angle:${((fibonacci(i + 7) * 151) % 20)-5}deg">
+    <img class="card-img" src="/assets/imgs/${argumentItemSet[0]}">
    <div class="card-data">
-      <span class="card-num">${i}/${arguments.length}</span>
-      <h2>Alejandro Escamilla</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!</p>
+      <span class="card-num">${i+1}/${arguments.length}</span>
+      <h2>${argumentItemSet[1]}</h2>
+      <p>${argumentItemSet[2]}</p>
       <footer>
         <label for="radio-${i === 0 ? arguments.length - 1 : i - 1}" aria-label="Previous">&#10094;</label>
         <label for="radio-${i === arguments.length - 1 ? 0 : i + 1}" aria-label="Next">&#10095;</label>

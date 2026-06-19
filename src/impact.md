@@ -12,7 +12,8 @@ layout: "page.11ty.js"
 <video src="/assets/Rev-Yearwood-5-26-26-small.webm" controls></video>
 
 <div class="photo-collection">
-{% photoset '645adccec1e0ecb039f5eeca1579cb44.webp' 'A5AJ4BWI.jpg' 'GettyImages_1243579501.webp' 'imengine.prod.srp.navigacloud.jpg' 'IMG_7521.jpeg' %}
+{% photoset '645adccec1e0ecb039f5eeca1579cb44.webp,Alejandro Escamilla,Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!' 'A5AJ4BWI.jpg,Shyamanta Baruah,Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!' 'GettyImages_1243579501.webp,Luke Chesser,Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!' 'imengine.prod.srp.navigacloud.jpg,Ilham Rahmansyah,Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!' 'IMG_7521.jpeg,petradr,Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!' 
+%}
 </div>
 
 <h3>Impact Team</h3>
