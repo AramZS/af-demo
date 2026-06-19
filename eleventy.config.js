@@ -500,6 +500,33 @@ module.exports = async function (eleventyConfig) {
 		return pagedPosts;
 	});
 
+	eleventyConfig.addShortcode('photoset', function(arg) {
+		// https://codepen.io/cbolson/pen/MYgrjrm
+		let string = '';
+		for (let i = 0; i < arguments.length; i++) {
+			string += /*html*/ `  <input type="radio" id="radio-${i}" name="radio-card" checked>
+  <article class="card" style="--angle:${(i + 7 * 51) % 9}deg">
+    <img class="card-img" src="/assets/imgs/${arguments[i]}">
+   <div class="card-data">
+      <span class="card-num">${i}/${arguments.length}</span>
+      <h2>Alejandro Escamilla</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!</p>
+      <footer>
+        <label for="radio-${i === 0 ? arguments.length - 1 : i - 1}" aria-label="Previous">&#10094;</label>
+        <label for="radio-${i === arguments.length - 1 ? 0 : i + 1}" aria-label="Next">&#10095;</label>
+      </footer>
+    </div>
+  </article>`;
+		}
+		return /*html*/ `<div class="photoset">
+<div class="cards">
+
+${string}
+
+</div>
+		</div>`;
+	});
+
 	eleventyConfig.addPlugin(require("eleventy-plugin-dart-sass"), {
 		sassLocation: path.join(path.resolve("."), "src/_sass/"),
 		perTemplateFiles: "template-",
