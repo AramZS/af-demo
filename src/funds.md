@@ -1,9 +1,8 @@
 ---
 permalink: /funds.html
 path: /funds
-eleventyExcludeFromCollections: true
 title: "Fund Alfalfa"
-internalPageTypes: [ 'page' ]
+internalPageTypes: [ 'page', 'home' ]
 layout: "page.11ty.js"
 ---
 

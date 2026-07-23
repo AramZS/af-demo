@@ -1,13 +1,12 @@
 ---
 permalink: /film.html
 path: /film
-eleventyExcludeFromCollections: true
 title: "Alfalfa: a film"
-internalPageTypes: [ 'page' ]
+internalPageTypes: [ 'page', 'home' ]
 layout: "page.11ty.js"
 ---
 
-<h2>A weekend heat wave. A town facing a water crisis.</h2>
+<h2 id="film">A weekend heat wave. A town facing a water crisis.</h2>
 
 Sprinkler man Lance’s life reaches a tipping point when his estranged
 son returns home, his daughter is accused of an act of violence, and he

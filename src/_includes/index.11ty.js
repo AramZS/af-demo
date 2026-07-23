@@ -2,6 +2,26 @@ const base = require("./base.11ty");
 module.exports = async function (data) {
 	// console.log("layout data", data);
 	let meta_description = data?.description || data.site?.description || "";
+	const allCollections = data.collections || {};
+	const allMarkdownPages = allCollections.allMarkdownPages;
+	console.log("index template collections", Object.keys(allCollections), "rendered markdown pages", allMarkdownPages.length);
+	allMarkdownPages.forEach((page) => {
+		console.log("page", page);
+	});
+	let renderingQueue = Object.values(data.site.nav);
+	let renderPromises = [];
+	for (const item of renderingQueue) {
+		let page = allMarkdownPages.find((page) => page.idSlug === item);
+		if (!page) {
+			console.warn("No page found for nav item", item);
+			continue;
+		}
+		console.log("Rendering index block page", page.idSlug, "for nav item", item);
+		
+		renderPromises.push(this.renderTemplate(await this.renderTransforms(page.rawInput)));
+	}
+	let awaitedRenderGroup = await Promise.all(renderPromises);
+	let renderedGroup = awaitedRenderGroup.map(content => `<section class="page">${content}</section>`).join('\n\n');
 	let insert = {
 		template: "index",
 		content: /*html*/ `
@@ -23,8 +43,10 @@ module.exports = async function (data) {
 		<h1 class="center">ALFALFA</h1>
 		<h3 class="center">An eco-noir by Jack Fessenden</h3>
 	</section>
-
+  <section class="pages-container">
+  	${renderedGroup}
   </section>
+  <script src="/assets/scripts/page.js"></script>
 `,
 	};
 	return base(data, insert);

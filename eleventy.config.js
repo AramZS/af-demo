@@ -45,6 +45,7 @@ module.exports = async function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("src/img/");
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(HtmlBasePlugin);
+	eleventyConfig.addPlugin(RenderPlugin);
 
 	eleventyConfig.setWatchThrottleWaitTime(5000);
 	eleventyConfig.on(
@@ -316,6 +317,27 @@ module.exports = async function (eleventyConfig) {
 
 	eleventyConfig.addCollection("tagList", (collection) => {
 		return getAllTags(collection.getAll());
+	});
+
+	// Global collection of rendered markdown content for all markdown pages.
+	eleventyConfig.addCollection("allMarkdownPages", (collection) => {
+
+		let allData = collection
+			.getAll();
+		console.log('allData sample from ', allData.length, 'items', 'sample:', allData[0].inputPath, allData[0].data.internalPageTypes);
+		let filteredCollection = allData.filter((item) => item.inputPath && item.inputPath.endsWith(".md") && item.data?.internalPageTypes?.includes('home'));
+		console.log("filteredCollection has ", filteredCollection.length, "items");
+		let newCollection = filteredCollection.map((item) => ({
+				url: item.url,
+				inputPath: item.inputPath,
+				outputPath: item.outputPath,
+				title: item.data?.title,
+				rawInput: item.rawInput,
+				idSlug: item.fileSlug,
+				eleventyExcludeFromCollections: true,
+			}));
+		console.log("allRenderedMarkdownPages", newCollection.length, "items");
+		return newCollection;
 	});
 
 	// Create a list of posts by tag for paged lists

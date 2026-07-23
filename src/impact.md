@@ -1,9 +1,8 @@
 ---
 permalink: /impact.html
 path: /impact
-eleventyExcludeFromCollections: true
 title: "Alfalfa: the film's impact"
-internalPageTypes: [ 'page' ]
+internalPageTypes: [ 'page', 'home' ]
 layout: "page.11ty.js"
 ---
 

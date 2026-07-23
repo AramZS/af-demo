@@ -1,0 +1,56 @@
+
+.scroll-hint
+    margin-top: 4rem
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 0.5rem
+    color: rgba(255,224,197,0.45)
+    font-size: 0.7rem
+    letter-spacing: 0.15em
+    text-transform: uppercase
+    animation: bounce 2s infinite
+
+    & svg
+        width: 20px
+        height: 20px
+        stroke: currentColor
+        fill: none
+        stroke-width: 1.5
+
+@keyframes bounce
+    0%, 100%
+        transform: translateY(0)
+        opacity: 0.45
+    50%
+        transform: translateY(6px)
+        opacity: 0.8
+
+section
+    padding: 6rem 4rem 1rem
+    min-height: 75vh
+
+    &.scroll-hint-container
+        height: 200px
+        min-height: 200px
+
+    & p
+        font-family: Tahoma, sans-serif
+        font-size: 18px
+        text-transform: uppercase
+
+    & p.left
+        padding-right: 60%
+
+    & p.right
+        padding-left: 60%
+
+    &.title-section
+        font-family: Owners Wide Bold
+
+        h1
+            font-size: 100px
+        h3
+            font-size: 20px
+            font-style: italic
+            text-transform: lowercase

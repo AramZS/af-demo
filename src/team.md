@@ -1,9 +1,8 @@
 ---
 permalink: /team.html
 path: /team
-eleventyExcludeFromCollections: true
 title: "Alfalfa: the Team Behind the Film"
-internalPageTypes: [ 'page' ]
+internalPageTypes: [ 'page', 'home' ]
 layout: "page.11ty.js"
 ---
 

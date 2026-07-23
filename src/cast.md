@@ -1,9 +1,8 @@
 ---
 permalink: /cast.html
 path: /cast
-eleventyExcludeFromCollections: true
 title: "Alfalfa Cast"
-internalPageTypes: [ 'page' ]
+internalPageTypes: [ 'page', 'home' ]
 layout: "page.11ty.js"
 ---
 
