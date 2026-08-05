@@ -1,0 +1,132 @@
+
+.scroll-hint
+    margin-top: 4rem
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 0.5rem
+    color: rgba(255,224,197,0.45)
+    font-size: 0.7rem
+    letter-spacing: 0.15em
+    text-transform: uppercase
+    animation: bounce 2s infinite
+
+    & svg
+        width: 20px
+        height: 20px
+        stroke: currentColor
+        fill: none
+        stroke-width: 1.5
+
+@keyframes bounce
+    0%, 100%
+        transform: translateY(0)
+        opacity: 0.45
+    50%
+        transform: translateY(6px)
+        opacity: 0.8
+
+.index-video-bg
+    position: fixed
+    inset: 0
+    z-index: -1
+    pointer-events: none
+    overflow: hidden
+    opacity: 1
+    transition: opacity 240ms linear, visibility 240ms linear
+
+    &::after
+        content: ''
+        position: absolute
+        inset: 0
+        background: rgba(0, 0, 0, 0.75)
+
+    &.is-hidden
+        opacity: 0
+        visibility: hidden
+
+    &__media
+        position: absolute
+        inset: 0
+        display: block
+        width: 100%
+        height: 100%
+        min-width: 100%
+        min-height: 100%
+        max-width: none
+        margin: 0
+        object-fit: cover
+
+.home section
+    padding: 6rem 4rem 1rem
+    min-height: 55vh
+
+    &.flex-left
+        align-items: flex-start
+
+    &.flex-right
+        align-items: flex-end
+
+    &.scroll-hint-container
+        height: 200px
+        min-height: 200px
+
+    & p
+        font-family: Verdana, sans-serif
+        font-size: 22px
+        text-transform: uppercase
+        font-weight: bold
+        width: 70%
+
+    & p.left
+        padding-right: 2px
+
+    & p.right
+        padding-left: 2px
+
+    &.title-section
+        font-family: Owners Wide Bold, sans-serif
+        min-height: 75vh
+        padding-top: 15vh
+
+        h1
+            font-size: 100px
+        h3
+            font-size: 20px
+            font-style: italic
+            text-transform: lowercase
+
+.section-separator
+    border: 1px solid var(--foreground)
+    width: 85vw
+
+section.hero:first-of-type
+    padding-top: 16px
+
+section.hero:nth-of-type(2)
+    padding-top: 12px
+
+section.hero > p
+    color: var(--foreground)
+
+#impact
+    overflow: visible
+    max-width: 480px
+    & > p:last-of-type
+        overflow: visible
+        max-width: 100vw
+        width: 100vw
+
+        video
+            max-width: 100vw
+            width: 100vw
+    & > div
+        overflow: visible
+    h2#impact-subhead
+        width: 85vw
+
+.headshot-descrip
+    max-width: 40vw
+    font-size: 1rem
+    font-family: Tahoma,sans-serif
+    line-height: 1.3

@@ -1,0 +1,144 @@
+html:root,
+html.theme-one,
+.theme-picker li.theme-one
+    --background: #30400f
+    --background-muted: #a84126
+    --foreground: #edf3f6
+    --foreground-muted: #ffe0c5
+    --accent: #143a39
+
+html.theme-two,
+.theme-picker li.theme-two
+    --background: #143a39
+    --background-muted: #81301b
+    --foreground: #edf3f6
+    --foreground-muted: #ffe0c5
+    --accent: #30400f
+
+html.theme-three,
+.theme-picker li.theme-three
+    --background: #3b510d
+    --background-muted: #d17930
+    --foreground: #ffe0c5
+    --foreground-muted: #33bad1
+    --accent: #5c7d1a
+
+html.theme-four,
+.theme-picker li.theme-four
+    --background: #2a2f20
+    --background-muted: #312c2b
+    --foreground: #bae85b
+    --foreground-muted: #6092f7
+    --accent: #e8715a
+
+html.theme-five,
+.theme-picker li.theme-five
+    --background: #314012
+    --background-muted: #1D260A
+    --foreground: #4177A6
+    --foreground-muted: #4177A6
+    --accent: #A68160
+
+html.theme-six,
+.theme-picker li.theme-six
+    --background: #25300E
+    --background-muted: #616754
+    --foreground: #D5E5F2
+    --foreground-muted: #64B7FF
+    --accent: #B38B67
+
+html.theme-seven,
+.theme-picker li.theme-seven
+    --background: #233e3a
+    --background-muted: #4f322e
+    --foreground: #b0ffbd
+    --foreground-muted: #b0fff3
+    --accent: #ffbab1
+
+.theme-selector
+    position: fixed
+    top: 1rem
+    right: 1rem
+    z-index: 30
+    padding: 0.5rem 0.5rem 1.8rem
+    border: 1px solid color-mix(in srgb, var(--foreground) 25%, transparent)
+    border-radius: 0.5rem
+    background: color-mix(in srgb, var(--background) 88%, transparent)
+    backdrop-filter: blur(8px)
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.24)
+
+    ul
+        list-style: none
+        margin: 0
+        padding: 0
+        display: grid
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+        gap: 0.35rem
+
+    li
+        margin: 0
+        padding: 0
+
+    .theme-selector-btn
+        width: 2rem
+        height: 2rem
+        border: 1px solid color-mix(in srgb, var(--foreground) 25%, transparent)
+        border-radius: 0.35rem
+        background: color-mix(in srgb, var(--accent) 35%, var(--background))
+        color: var(--foreground)
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        font-size: 0.75rem
+        cursor: pointer
+
+        .swatches
+            display: none
+
+    li.current .swatches
+        position: absolute
+        left: 0.5rem
+        right: 0.5rem
+        bottom: 0.45rem
+        display: grid
+        grid-template-columns: repeat(5, minmax(0, 1fr))
+        gap: 0.2rem
+        height: 0.7rem
+        pointer-events: none
+
+        span
+            display: block
+            height: 100%
+            border-radius: 999px
+            border: 1px solid color-mix(in srgb, var(--foreground) 20%, transparent)
+
+        .background
+            background: var(--background)
+
+        .background-muted
+            background: var(--background-muted)
+
+        .foreground
+            background: var(--foreground)
+
+        .foreground-muted
+            background: var(--foreground-muted)
+
+        .accent
+            background: var(--accent)
+
+    li.current .theme-selector-btn,
+    .theme-selector-btn:hover,
+    .theme-selector-btn:focus-visible
+        border-color: var(--foreground)
+        background: color-mix(in srgb, var(--background-muted) 45%, var(--background))
+        outline: none
+
+@media (max-width: 700px)
+    .theme-selector
+        top: auto
+        right: 0.75rem
+        bottom: 0.75rem
+
+        ul
+            grid-template-columns: repeat(7, minmax(0, 1fr))

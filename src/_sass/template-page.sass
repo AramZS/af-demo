@@ -6,16 +6,21 @@ h2
     font-size: 2em
 
 section p
-    font-size: 1.1rem
-    color: var(--foreground)
+    font-size: 1.3rem
+    font-family: Tahoma, sans-serif
+    font-weight: 500
+    color: white
     max-width: 480px
     line-height: 1.7
     margin-bottom: 2.5rem
 
 video, iframe
-    max-width: 85%
     margin: 0 auto
     margin-bottom: 2em
+
+.video-player-iframe-embed
+    width: 90vw
+    height: 90vh
 
 nav .active
     a, a:visited, a:hover
@@ -44,7 +49,8 @@ nav .active
     img
         border-radius: 9999px
         height: 150px
-        width: 150pxf
+        width: 150px
+        object-fit: cover
 
 img
     cursor: pointer

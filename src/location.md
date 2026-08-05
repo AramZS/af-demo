@@ -1,9 +1,8 @@
 ---
 permalink: /location.html
 path: /location
-eleventyExcludeFromCollections: true
 title: "Alfalfa: About the Location"
-internalPageTypes: [ 'page' ]
+internalPageTypes: [ 'page', 'home' ]
 layout: "page.11ty.js"
 ---
 
