@@ -86,3 +86,45 @@ function setupImageModal() {
 
 setupIndexBackgroundVideo();
 setupImageModal();
+
+window.setTheme = function (themeName) {
+	console.log("setTheme", themeName);
+	localStorage.setItem("theme", themeName);
+	document.documentElement.className = "theme-" + themeName;
+
+	let current = document.querySelector(".theme-selector li.current");
+	if (!current) {
+		return;
+	}
+	console.log("Removing current theme class from", current);
+	current.classList.remove("current");
+
+	current = document.querySelector(
+		".theme-selector li." + "theme-" + themeName
+	);
+	if (!current) {
+		return;
+	}
+	console.log("Adding current theme class to", current);
+	current.classList.add("current");
+}
+
+// When document ready add event listeners
+document.addEventListener("DOMContentLoaded", function () {
+	const selectTheme = (e) => {
+		const btn = e.currentTarget;
+		if (!btn.dataset.theme) {
+			return;
+		}
+		console.log('Theme button clicked', btn.dataset.theme);
+		window.setTheme(btn.dataset.theme);
+	};
+
+	Array.from(document.getElementsByClassName("theme-selector-btn")).forEach(
+		(el) => {
+			el.addEventListener("click", selectTheme);
+		}
+	);
+
+	window.setTheme(localStorage.getItem("theme") || "one");
+});
