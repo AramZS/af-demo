@@ -9,7 +9,7 @@ module.exports = async function (data) {
 		console.log("page", page);
 	});
 	let renderingQueue = Object.values(data.site.nav);
-	let renderPromises = [];
+	let renderPromises = {};
 	for (const item of renderingQueue) {
 		let page = allMarkdownPages.find((page) => page.idSlug === item);
 		if (!page) {
@@ -18,13 +18,21 @@ module.exports = async function (data) {
 		}
 		console.log("Rendering index block page", page.idSlug, "for nav item", item);
 		
-		renderPromises.push(this.renderTemplate(await this.renderTransforms(page.rawInput)));
+		renderPromises[item] = this.renderTemplate(await this.renderTransforms(page.rawInput));
 	}
-	let awaitedRenderGroup = await Promise.all(renderPromises);
-	let renderedGroup = awaitedRenderGroup.map(content => `<section class="page">${content}</section>`).join('\n\n');
+	let awaitedRenderGroup = {};
+	for (const [key, promise] of Object.entries(renderPromises)) {
+		awaitedRenderGroup[key] = await promise;
+	}
+	let renderedGroup = Object.entries(awaitedRenderGroup).map(([key, content]) => `<section class="page" id="${key}">${content}</section> <hr class="section-separator" />`).join('\n\n');
 	let insert = {
 		template: "index",
 		content: /*html*/ `
+	<div class="index-video-bg" aria-hidden="true">
+		<video class="index-video-bg__media" autoplay muted loop playsinline preload="auto" poster="/assets/imgs/split-img.jpg">
+			<source src="/assets/Rev-Yearwood-5-26-26-small.webm" type="video/webm">
+		</video>
+	</div>
 	<div class="home">
 		<section class="hero scroll-hint-container">
 			<div class="scroll-hint">

@@ -26,9 +26,32 @@
         transform: translateY(6px)
         opacity: 0.8
 
+.index-video-bg
+    position: fixed
+    inset: 0
+    z-index: -1
+    pointer-events: none
+    opacity: 1
+    transition: opacity 240ms linear, visibility 240ms linear
+
+    &::after
+        content: ''
+        position: absolute
+        inset: 0
+        background: rgba(0, 0, 0, 0.3)
+
+    &.is-hidden
+        opacity: 0
+        visibility: hidden
+
+    &__media
+        width: 100%
+        height: 100%
+        object-fit: cover
+
 .home section
     padding: 6rem 4rem 1rem
-    min-height: 75vh
+    min-height: 55vh
 
     &.scroll-hint-container
         height: 200px
@@ -40,13 +63,15 @@
         text-transform: uppercase
 
     & p.left
-        padding-right: 60%
+        padding-right: 45%
 
     & p.right
-        padding-left: 60%
+        padding-left: 45%
 
     &.title-section
         font-family: Owners Wide Bold
+        min-height: 75vh
+        padding-top: 15vh
 
         h1
             font-size: 100px
@@ -54,3 +79,13 @@
             font-size: 20px
             font-style: italic
             text-transform: lowercase
+
+.section-separator
+    border: 1px solid white
+    width: 85vw
+
+section.hero:first-of-type
+    padding-top: 16px
+
+section.hero:nth-of-type(2)
+    padding-top: 12px
