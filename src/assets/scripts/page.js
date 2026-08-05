@@ -9,7 +9,7 @@ function setupIndexBackgroundVideo() {
 
 	const syncVideoState = () => {
 		const viewportHeight = window.innerHeight || 1;
-		const threshold = viewportHeight * 2.5;
+		const threshold = viewportHeight * 2;
 		const progress = Math.min(window.scrollY / threshold, 1);
 
 		videoShell.style.opacity = String(1 - progress);

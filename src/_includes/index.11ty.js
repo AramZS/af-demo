@@ -29,7 +29,7 @@ module.exports = async function (data) {
 		template: "index",
 		content: /*html*/ `
 	<div class="index-video-bg" aria-hidden="true">
-		<video class="index-video-bg__media" autoplay muted loop playsinline preload="auto" poster="/assets/imgs/split-img.jpg">
+		<video class="index-video-bg__media" muted loop playsinline autoplay="autoplay" preload="auto" poster="/assets/imgs/split-img.jpg">
 			<source src="/assets/Rev-Yearwood-5-26-26-small.webm" type="video/webm">
 		</video>
 	</div>
