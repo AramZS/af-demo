@@ -33,7 +33,6 @@ let data = {
 		team: "team",
 		cast: "cast",
 		impact: "impact",
-		location: "location",
 		funds: "funds",
 	}
 };
