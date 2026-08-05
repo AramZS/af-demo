@@ -9,9 +9,10 @@ function setupIndexBackgroundVideo() {
 
 	const syncVideoState = () => {
 		const viewportHeight = window.innerHeight || 1;
-		const threshold = viewportHeight * 2;
-		const progress = Math.min(window.scrollY / threshold, 1);
-
+		const threshold = viewportHeight * 1.5;
+		let progress = Math.min(window.scrollY / threshold, 1);
+		console.log("scroll progress", progress, "scrollY", window.scrollY, "threshold", threshold);
+		progress = progress < .2 ? 0 : progress;
 		videoShell.style.opacity = String(1 - progress);
 		videoShell.classList.toggle("is-hidden", progress >= 1);
 

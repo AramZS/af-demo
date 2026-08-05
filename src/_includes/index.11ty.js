@@ -40,12 +40,12 @@ module.exports = async function (data) {
 				Scroll down
 			</div>
 		</section>
-		<section class="hero">
+		<section class="hero flex-left">
 			<!--  <p class="sub-title">SUBTITLE</p>  
 			<a href="#" class="btn">SOME BUTTON</a> -->
 			<p class="left">where water is most scarce....</p>
 		</section>
-		<section class="hero">
+		<section class="hero flex-right">
 			<p class="right">America grows its thirstiest crop</p>
 		</section>
 		<section class="hero title-section">
