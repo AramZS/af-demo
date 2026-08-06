@@ -8,7 +8,8 @@ layout: "page.11ty.js"
 
 ## Impact
 
-<h2 id="impact-subhead">“To solve the climate crisis, we must first solve the crisis of imagination” - REVEREND LENNOX YEARWOOD JR. (Producer)</h2> 
+<h2 id="impact-subhead">“To solve the climate crisis, we must first solve the crisis of imagination”</h2> 
+	<h3 id="pull-quote-credit">- REVEREND LENNOX YEARWOOD JR. (Producer)</h3> 
  
 
 <video id="rev-video-impact" src="/assets/Rev-Yearwood-5-26-26-small.webm" controls></video>

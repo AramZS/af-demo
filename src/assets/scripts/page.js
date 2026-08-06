@@ -9,7 +9,7 @@ function setupIndexBackgroundVideo() {
 
 	const syncVideoState = () => {
 		const viewportHeight = window.innerHeight || 1;
-		const threshold = viewportHeight * 1.5;
+		const threshold = viewportHeight * 1.3;
 		let progress = Math.min(window.scrollY / threshold, 1);
 		console.log("scroll progress", progress, "scrollY", window.scrollY, "threshold", threshold);
 		progress = progress < .2 ? 0 : progress;
