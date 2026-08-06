@@ -30,7 +30,7 @@ module.exports = async function (data) {
 		content: /*html*/ `
 	<div class="index-video-bg" aria-hidden="true">
 		<video class="index-video-bg__media" muted loop autoplay="autoplay" preload="auto" aria-hidden="true" crossorigin="anonymous" controlslist="nodownload" playsinline="" poster="/assets/imgs/split-img.jpg">
-			<source src="/assets/Rev-Yearwood-5-26-26-small.webm" type="video/webm">
+			<source src="/assets/wbsite_sizzle_v3.webm" type="video/webm">
 		</video>
 	</div>
 	<div class="home" id="film">
@@ -42,7 +42,7 @@ module.exports = async function (data) {
 		</section>
 		<section class="hero title-section">
 			<h1 class="center">ALFALFA</h1>
-			<h3 class="center">An eco-noir by Jack Fessenden</h3>
+			<h3 class="center">An eco-noir</h3>
 		</section>		
 		<section class="hero flex-left">
 			<!--  <p class="sub-title">SUBTITLE</p>  
