@@ -54,7 +54,7 @@ module.exports = async function (data) {
 		</section>
 
 	</div>
-	<hr class="section-separator" />
+	
   <section class="pages-container">
 	<section class="page">
 		${data.content}
