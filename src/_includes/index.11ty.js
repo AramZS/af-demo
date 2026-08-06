@@ -24,7 +24,7 @@ module.exports = async function (data) {
 	for (const [key, promise] of Object.entries(renderPromises)) {
 		awaitedRenderGroup[key] = await promise;
 	}
-	let renderedGroup = Object.entries(awaitedRenderGroup).map(([key, content]) => `<section class="page" id="${key}">${content}</section> <hr class="section-separator" />`).join('\n\n');
+	let renderedGroup = Object.entries(awaitedRenderGroup).map(([key, content]) => `<section class="page" id="${key}">${content}</section>`).join('\n\n');
 	let insert = {
 		template: "index",
 		content: /*html*/ `

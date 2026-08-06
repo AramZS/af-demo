@@ -10,6 +10,9 @@ layout: "page.11ty.js"
 
 <h2 id="impact-subhead">“To solve the climate crisis, we must first solve the crisis of imagination” - REVEREND LENNOX YEARWOOD JR. (Producer)</h2> 
  
+
+<video id="rev-video-impact" src="/assets/Rev-Yearwood-5-26-26-small.webm" controls></video>
+
 Alfalfa bridges a critical gap in the public imagination by bringing a specific, relatable consequence of the climate crisis to life. More than 40 million people depend on freshwater from the Colorado River, a lifeline strained by a 25-year megadrought accelerated by climate change, rapid suburban growth, data-center demand, and water-intensive agriculture. Alfalfa dramatizes a contemporary family’s struggle with environmental collapse and challenges audiences to rethink how humans live in balance with the natural world.
 
 Alfalfa has established relationships with leading climate non-profits and media organizations to directly support an impact campaign to extend visibility and engagement with key audiences, including directly aﬀected communities and tribes across the Southwest. 
@@ -25,4 +28,3 @@ A key partner of our impact mission, Reverend Lennox Yearwood is the President &
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar malesuada massa a tincidunt. Praesent gravida egestas dui vel tristique. Praesent vel augue a nisl suscipit posuere ac nec ipsum.
 
-<video src="/assets/Rev-Yearwood-5-26-26-small.webm" controls></video>
