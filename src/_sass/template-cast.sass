@@ -1,37 +1,42 @@
 #cast
+
     #cast-container
         display: flex
         flex-wrap: wrap
         justify-content: center
 
     .cast-person
-        display: flex
         flex: 0 1 50%
         box-sizing: border-box
         padding: 0 20px
-        margin-bottom: 40px
         text-align: center
         vertical-align: middle
         justify-content: center
         align-items: center
+        height: 60vh
+        max-height: 60vmin
 
-        div:nth-of-type(2)
-            margin-left: 30px
-            display: table-cell
-            vertical-align: middle
+        .headshot
+            width: 90%
+            height: 90%
+            overflow: hidden
+            margin: 0 auto
+
+            img
+                width: 80%
+                height: 100%
+                object-fit: cover
+                cursor: pointer
+
+        .cast-person-content
+            margin-bottom: 2em
+            h3
+                margin-top: 1.2em
+                font-size: 1.4em
+        p
+            margin: 0 auto
+            display: none
 
     @media (max-width: 860px)
         .cast-person
             flex-basis: 100%
-
-    .headshot
-        border-radius: 9999px
-        width: 150px
-        box-shadow: var(--background) 0px 0px 0px 4px, var(--accent) 0px 0px 0px 6px
-
-        img
-            border-radius: 9999px
-            height: 150px
-            width: 150px
-            object-fit: cover
-            cursor: pointer
