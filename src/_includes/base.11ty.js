@@ -56,7 +56,8 @@ module.exports = async function (data, zones) {
 
 		${templateStyle}
 		${zones.lateHead || ""}
-
+		<style id="dynamic-styles">
+		</style>
 	</head>
 <body>
 <div class="bg"></div>

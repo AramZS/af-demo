@@ -18,13 +18,15 @@ a
     background-size: cover
     background-position: center
     z-index: 0
+    transition: background 1s ease
 
     /* dark overlay so text stays readable */
     &::after
         content: ''
         position: absolute
         inset: 0
-        background: rgba(0, 0, 0, 0.20)
+        transition: background 1s ease
+        background: var(--background-filter)
 
 .page
     position: relative
