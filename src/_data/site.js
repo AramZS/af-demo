@@ -30,6 +30,7 @@ let data = {
 	playOrder: "ascending", // ascending or descending
 	nav: {
 		film: "film",
+		teaser: "teaser",
 		team: "team",
 		cast: "cast",
 		impact: "impact",

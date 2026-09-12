@@ -37,7 +37,7 @@ module.exports = async function (data, zones) {
 		${zones.earlyHead || ""}
 		<link rel="stylesheet" href="/assets/css/style.css"  hx-preserve="true">
 
-		<script src="/assets/js/script.js" defer type="application/javascript" hx-preserve="true"></script>
+		<script src="/assets/scripts/script.js" defer type="application/javascript" hx-preserve="true"></script>
 
 		<script src="https://unpkg.com/scrollama" async type="application/javascript" hx-preserve="true"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" hx-preserve="true" rel="stylesheet">
@@ -50,6 +50,10 @@ module.exports = async function (data, zones) {
 		<meta name="theme-color" content="#1f1836">
 
 		<link rel="canonical" href="${canonical}" />
+		<script async src="https://player.vimeo.com/api/player.js" type="application/javascript" hx-preserve="true" onload="window.vimeoPlayerActivation()"></script>
+
+		<script src="/assets/scripts/vimeo-player-activation.js" type="application/javascript" hx-preserve="true"></script>
+
 		${templateStyle}
 		${zones.lateHead || ""}
 
