@@ -40,14 +40,14 @@ function setupIndexBackgroundVideo() {
 	syncVideoState();
 }
 
-function setupImageModal() {
+function setupImageClickEffects() {
 	// Listen for every click on an IMG element.
 	document.addEventListener("click", function (event) {
 		if (window["image-container-modal"]) {
 			return;
 		}
 		// Check if the clicked element is an IMG.
-		if (event.target.tagName === "IMG") {
+		if (event.target.tagName === "IMG" && event.target.classList.contains("magnifiable")) {
 			// Construct a magnified view of the image by opening the image SRC in a modal div.
 			let modal = document.createElement("div");
 
@@ -81,11 +81,25 @@ function setupImageModal() {
 			window.document.body.style.overflow = "hidden";
 			document.body.appendChild(modal);
 		}
+		if (event.target.tagName === "IMG" && event.target.parentElement.classList.contains("headshot")) {
+			// Support machines like phones that do not have hover
+			console.log('Headshot clicked', event.target, event.target.parentElement);
+			event.target.parentElement.parentElement.classList.toggle("headshot-overlay-active");
+			let closeButton = document.createElement("div");
+			closeButton.innerHTML = "&times;";
+
+			closeButton.id = "modal-close-button";
+			event.target.parentElement.appendChild(closeButton);
+			closeButton.addEventListener("click", function () {
+				closeButton.remove();
+				event.target.parentElement.parentElement.classList.remove("headshot-overlay-active");
+			});
+		}
 	});
 }
 
 setupIndexBackgroundVideo();
-setupImageModal();
+setupImageClickEffects();
 
 window.setTheme = function (themeName) {
 	console.log("setTheme", themeName);
