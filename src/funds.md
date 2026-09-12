@@ -10,8 +10,12 @@ layout: "page.11ty.js"
 
 ### DONATE:
 
-ALFALFA is fiscally sponsored by the Utah Film Center. Tax deductible donations can be made via their online portal here. Donations cannot be recouped as an investment nor do they participate in the net proceeds of the project alongside the investors, as these are considered charitable contributions. 
+ALFALFA is fiscally sponsored by the Utah Film Center. Tax deductible donations can be made via [their online portal here](https://donate.mazloweb.com/donation-link-preview/TLNtPwv1r5QzMmnxuu252z). Donations cannot be recouped as an investment nor do they participate in the net proceeds of the project alongside the investors, as these are considered charitable contributions. 
 
+<iframe id="mazlo-donate-form-TLNtPwv1r5QzMmnxuu252z" src="https://donate.mazloweb.com/donate/alfalfa?embed=form" width="450" height="550" style="border: none; display: block;" sandbox="allow-forms allow-scripts allow-top-navigation allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+<script>
+(function(){var f=document.getElementById("mazlo-donate-form-TLNtPwv1r5QzMmnxuu252z");window.addEventListener("message",function(e){if(e.source===f.contentWindow&&e.data&&e.data.type==="mazlo-embed-resize"&&typeof e.data.height==="number"){f.style.height=e.data.height+"px";}});})();
+</script>
 
 ### INVEST:
 
