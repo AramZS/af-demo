@@ -8,6 +8,8 @@ layout: "page.11ty.js"
 
 ## Cast
 
+<div id="cast-container">
+
 <div class="cast-person">
 	<div class="headshot"><img src="/assets/imgs/scoot-mcnairy.png" class="css-11l0dnl"></div>
 	<div>
@@ -69,4 +71,6 @@ layout: "page.11ty.js"
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar malesuada massa a tincidunt. Praesent gravida egestas dui vel tristique. Praesent vel augue a nisl suscipit posuere ac nec ipsum.</p>
 		<p>Previous credits include: <em>Consectetur, Adipisicing, Elit</em></p>
 	</div>
+</div>
+
 </div>
