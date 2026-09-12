@@ -24,17 +24,17 @@ function setupIndexBackgroundVideo() {
 			}
 		}
 		if (window.scrollY < 5) {
-			console.log("Reached scrollY less than 1076");
+			//console.log("Reached scrollY less than 1076");
 			document.querySelector("body").style.setProperty('--background-filter', 'rgba(0, 0, 0, 0.0)');
 		}
 
 		if (window.scrollY > 1076 && window.scrollY < 1096) {
-			console.log("Reached scrollY 1076"," opacity target = ", (window.scrollY - 1076) / 100);
+			//console.log("Reached scrollY 1076"," opacity target = ", (window.scrollY - 1076) / 100);
 			document.querySelector("body").style.setProperty('--background-filter', `rgba(0, 0, 0, ${ (window.scrollY - 1076) / 100 })`);
 		}
 
-		if (window.scrollY > 1105) {
-			console.log("Reached scrollY 1105"," opacity target = .20");
+		if (window.scrollY > 1100 && window.scrollY < 1225) {
+			//console.log("Reached scrollY 1105"," opacity target = .20");
 			document.querySelector("body").style.setProperty('--background-filter', `rgba(0, 0, 0, .20)`);
 		}
 
