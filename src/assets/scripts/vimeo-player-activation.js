@@ -10,6 +10,7 @@ window.navfadeRemove = function() {
 	console.log('[Vimeo Player] navfadeRemove called');
 	document.querySelector('nav').classList.remove('fade');
 	document.querySelector('section.pages-container').classList.remove('focus-mode');
+	window.removeEventListener("scroll", window.navfadeRemove, { passive: true });
 };
 
 window.vimeoPlayerActivation = function() {
@@ -36,6 +37,9 @@ window.vimeoPlayerActivation = function() {
 					window.vimeoPlayerFSState = false;
 				});*/
 				window.navfade();
+
+
+				window.addEventListener("scroll", window.navfadeRemove, { passive: true });
 				document.querySelector('body').addEventListener('click', window.navfadeRemove);
 				document.querySelector('section.pages-container').addEventListener('click', window.navfadeRemove);
 				document.querySelector('section#teaser').addEventListener('click', window.navfadeRemove);
@@ -59,7 +63,7 @@ window.vimeoPlayerActivation = function() {
 					// an error occurred
 					window.vimeoPlayerFSState = false;
 				});*/
-				window.navfade();
+				window.navfadeRemove();
 			}
 		}).catch(function(error) {
 			console.log('[Vimeo Player] could not determine fullscreen state', error)
@@ -72,8 +76,6 @@ window.vimeoPlayerActivation = function() {
 
 
 }
-
-window.addEventListener("scroll", window.navfadeRemove, { passive: true });
 
 setTimeout(function() {
 	if (!window.vimeoPlayerActivation) {
