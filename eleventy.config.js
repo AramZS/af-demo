@@ -568,6 +568,32 @@ ${string}
 		</div>`;
 	});
 
+	eleventyConfig.addShortcode('photoshow', function(arg) {
+		// https://codepen.io/cbolson/pen/MYgrjrm
+		let string = '';
+		for (let i = 0; i < arguments.length; i++) {
+			var imageString = arguments[i] = arguments[i].trim();
+			string += /*html*/ `  <input type="radio" id="radio-${i}" name="radio-card" ${i === 0 ? "checked" : ""}>
+  <article class="card" style="">
+    <img class="card-img" src="/assets/imgs/${imageString}">
+   <div class="card-data">
+      <span class="card-num">${i+1}/${arguments.length}</span>
+      <footer>
+        <label for="radio-${i === 0 ? arguments.length - 1 : i - 1}" aria-label="Previous">&#10094;</label>
+        <label for="radio-${i === arguments.length - 1 ? 0 : i + 1}" aria-label="Next">&#10095;</label>
+      </footer>
+    </div>
+  </article>`;
+		}
+		return /*html*/ `<div class="photoset photoshow">
+<div class="cards">
+
+${string}
+
+</div>
+		</div>`;
+	});
+
 	eleventyConfig.addPlugin(require("eleventy-plugin-dart-sass"), {
 		sassLocation: path.join(path.resolve("."), "src/_sass/"),
 		perTemplateFiles: "template-",

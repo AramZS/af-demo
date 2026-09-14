@@ -17,10 +17,10 @@ A key partner of our impact mission, Reverend Lennox Yearwood is the President &
 
 Alfalfa bridges a critical gap in the public imagination by bringing a specific, relatable consequence of the climate crisis to life. More than 40 million people depend on freshwater from the Colorado River, a lifeline strained by a 25-year megadrought accelerated by climate change, rapid suburban growth, data-center demand, and water-intensive agriculture. Alfalfa dramatizes a contemporary family’s struggle with environmental collapse and challenges audiences to rethink how humans live in balance with the natural world.
 
-Alfalfa has established relationships with leading climate non-profits and media organizations to directly support an impact campaign to extend visibility and engagement with key audiences, including directly aﬀected communities and tribes across the Southwest. 
+Alfalfa has established relationships with leading climate non-profits and media organizations to directly support an impact campaign to extend visibility and engagement with key audiences, including directly affected communities and tribes across the Southwest. 
 
 <div class="photo-collection">
-{% photoset '645adccec1e0ecb039f5eeca1579cb44.webp,Alejandro Escamilla,Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!' 'A5AJ4BWI.jpg,Shyamanta Baruah,Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!' 'GettyImages_1243579501.webp,Luke Chesser,Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!' 'imengine.prod.srp.navigacloud.jpg,Ilham Rahmansyah,Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!' 'IMG_7521.jpeg,petradr,Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores accusantium cumque atque? Ex voluptatem quisquam temporibus. Provident rerum quae nemo eligendi fugiat!' 
+{% photoshow '645adccec1e0ecb039f5eeca1579cb44.webp' 'GettyImages_1243579501.webp' 'imengine.prod.srp.navigacloud.jpg' 'IMG_7521.jpeg' 
 %}
 </div>
 
