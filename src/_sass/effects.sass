@@ -74,10 +74,10 @@ nav
         border-width: 0
 
     .cards
-        --img-w: 200px
+        --img-w: 64vw
         --duration: 300ms
         --img-easing: cubic-bezier(0.34, 1.56, 0.64, 1)
-        width: min(100% - 4rem, 800px)
+        width: 65vw
         margin-inline: auto
         display: grid
 
@@ -97,22 +97,23 @@ nav
 
     @media (600px < width)
         .card
-            --cards-grid-cols: var(--img-w) auto
-            --cards-grid-rows: auto
-            --cards-grid-gap: 4rem
+            --cards-grid-cols: var(--img-w)
+            --cards-grid-rows: auto auto
+            --cards-grid-gap: 1em
             --cards-footer-justify: start
 
     .card-img
-        width: 200px
-        height: 200px
-        aspect-ratio: 1 / 1
+        width: 60vw
+        height: calc((60vw / 2) + 5vh)
+        aspect-ratio: 2/1
+        max-width: none
         rotate: var(--angle, 0deg)
         border-radius: 10px
-        border: 3px solid #864d4d
         overflow: hidden
         transform-origin: center
         object-fit: cover
         box-shadow: 0 0 5px 3px rgba(0 0 0 / .05)
+        margin: 0 auto
 
     input:nth-of-type(1):checked + .card
         & ~ .card > .card-img
@@ -182,17 +183,18 @@ nav
 
         &-data
             display: grid
-            gap: 1rem
+            gap: .5em
 
         &-data > .card-num
             opacity: var(--data-opacity, 0)
             font-size: .8rem
-            color: #666
+            color: var(--foreground)
 
         &-data > footer
             display: flex
             justify-content: var(--cards-footer-justify)
-            gap: 2rem
+            gap: 4em
+            padding: 1.5em
 
             & label
                 margin-block-start: auto
