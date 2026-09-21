@@ -23,7 +23,7 @@ img, video, iframe
 @media (max-width: $large-mobile)
 
     html
-        font-size: 14px
+        font-size: 15px
 
     section
         padding: 5rem 1.25rem 3rem
@@ -37,6 +37,20 @@ img, video, iframe
 
     h3
         font-size: 1.8rem
+
+    // --- Navigation -------------------------------------------------
+    nav
+        padding: 0.85rem 1rem
+        justify-content: center
+
+        ul
+            flex-wrap: wrap
+            justify-content: center
+            gap: 0.75rem 3rem
+            margin: 0
+
+            & li a
+                font-size: 1.8rem
 
     // Long intro paragraph on the impact page overflows the viewport
     #impact, #funds
@@ -64,27 +78,6 @@ img, video, iframe
 
     #pull-quote-credit
         font-size: 1.3rem
-
-// ---------------------------------------------------------------------
-// Phones
-// ---------------------------------------------------------------------
-@media (max-width: $mobile-width)
-
-    html
-        font-size: 12px
-    // --- Navigation -------------------------------------------------
-    nav
-        padding: 0.85rem 1rem
-        justify-content: center
-
-        ul
-            flex-wrap: wrap
-            justify-content: center
-            gap: 0.75rem 1.25rem
-            margin: 0
-
-            & li a
-                font-size: 1.3rem
 
     // Compact theme swatch picker so it clears the nav on small screens
     .theme-selector
@@ -207,3 +200,25 @@ img, video, iframe
     // --- Footer -----------------------------------------------------
     footer
         padding: 1.5rem 1rem
+
+// ---------------------------------------------------------------------
+// Phones
+// ---------------------------------------------------------------------
+@media (max-width: $mobile-width)
+
+    html
+        font-size: 12px
+
+    // --- Navigation -------------------------------------------------
+    nav
+        padding: 0.85rem 1rem
+        justify-content: center
+
+        ul
+            flex-wrap: wrap
+            justify-content: center
+            gap: 0.75rem 1.5rem
+            margin: 0
+
+            & li a
+                font-size: 1.3rem
