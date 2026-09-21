@@ -1,0 +1,175 @@
+@use 'variables' as *
+
+// =====================================================================
+// Mobile overrides
+// Loaded last so these rules win over the desktop-first base styles.
+// Uses the breakpoints defined in _variables.sass and leans on relative
+// units (rem / vw / clamp) so type and layout scale down to phones.
+// =====================================================================
+
+// Prevent sideways scrolling caused by wide vw-based elements
+html, body
+    max-width: 100%
+    overflow-x: hidden
+
+// Media should never blow out its container on small screens
+img, video, iframe
+    max-width: 100%
+    height: auto
+
+// ---------------------------------------------------------------------
+// Tablet / large-mobile and below
+// ---------------------------------------------------------------------
+@media (max-width: $large-mobile)
+
+    section
+        padding: 5rem 1.25rem 3rem
+
+    .home section
+        padding: 5rem 1.5rem 1rem
+
+        & p
+            width: 90%
+            font-size: clamp(1.25rem, 5vw, 2.19em)
+
+    // Long intro paragraph on the impact page overflows the viewport
+    #impact
+        & > p:first-of-type
+            max-width: 100%
+            width: 100%
+
+        #rev-video-impact
+            max-width: 100%
+            width: 100%
+
+        h2#impact-subhead
+            width: 100%
+
+        h3#pull-quote-credit
+            margin-left: 0
+            margin-bottom: 2.5em
+            text-align: center
+
+    #pull-quote-credit
+        font-size: 1.3em
+
+// ---------------------------------------------------------------------
+// Phones
+// ---------------------------------------------------------------------
+@media (max-width: $mobile-width)
+
+    // --- Navigation -------------------------------------------------
+    nav
+        padding: 0.85rem 1rem
+        justify-content: center
+
+        ul
+            flex-wrap: wrap
+            justify-content: center
+            gap: 0.75rem 1.25rem
+            margin: 0
+
+            & li a
+                font-size: 0.8rem
+
+    // Compact theme swatch picker so it clears the nav on small screens
+    .theme-selector
+        right: 0.5rem
+        padding: 0.35rem 0.35rem 1.4rem
+
+        ul
+            grid-template-columns: repeat(4, minmax(0, 1fr))
+            gap: 0.25rem
+
+        .theme-selector-btn
+            width: 1.6rem
+            height: 1.6rem
+            font-size: 0.65rem
+
+    // --- Global sections -------------------------------------------
+    section
+        min-height: auto
+        padding: 6rem 1.1rem 2.5rem
+
+    .hero .sub-title h1
+        font-size: clamp(2rem, 9vw, 3rem)
+
+    .hero .sub-title p
+        font-size: 1rem
+
+    // --- Page template ---------------------------------------------
+    h2
+        font-size: 2.25em
+
+    section p
+        font-size: 1.1rem
+
+    .video-player-iframe-embed
+        width: 100%
+        height: auto
+        aspect-ratio: 16 / 9
+
+    // Overlapping "duel" images: give them room and stop them collapsing
+    .duel-images
+        width: 90vw
+        height: auto
+
+        .overlapping-layout
+            max-width: 100%
+
+    #teaser-frame
+        width: 92vw
+        height: 60vh
+
+    // --- Home / index ----------------------------------------------
+    .home section
+        padding: 5rem 1.1rem 1rem
+
+        & p
+            width: 100%
+            font-size: clamp(1.15rem, 6vw, 1.9rem)
+
+        &.title-section
+            padding-top: 12vh
+
+            h1
+                font-size: clamp(3rem, 16vw, 9rem)
+                margin-bottom: 6vh
+
+            h3
+                font-size: clamp(2rem, 11vw, 6rem)
+
+    .section-separator
+        width: 90vw
+
+    // --- Cards ------------------------------------------------------
+    .gel-cards .card-grid
+        grid-template-columns: 1fr
+        gap: 1rem
+
+    // --- Team -------------------------------------------------------
+    #team .cast-person
+        min-height: auto
+        padding: 0 10px
+
+        .headshot
+            width: 85%
+            height: auto
+
+        .headshot-descrip
+            max-width: 90vw
+            font-size: 1.05rem
+
+    // --- Cast grid --------------------------------------------------
+    #cast .cast-person
+        height: auto
+        max-height: none
+        margin-bottom: 24px
+
+        .headshot img
+            height: 60vh
+            max-height: 60vmin
+
+    // --- Footer -----------------------------------------------------
+    footer
+        padding: 1.5rem 1rem
