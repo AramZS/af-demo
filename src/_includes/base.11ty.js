@@ -56,8 +56,10 @@ module.exports = async function (data, zones) {
 
 		${templateStyle}
 		${zones.lateHead || ""}
+		<link rel="stylesheet" href="/assets/css/template-mobile-overrides.css">
 		<style id="dynamic-styles">
 		</style>
+
 	</head>
 <body>
 <div class="bg"></div>
