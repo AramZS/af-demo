@@ -13,6 +13,8 @@
         text-align: center
         height: 60vh
         max-height: 60vmin
+        overflow: hidden
+        max-width: 922px
 
         div#modal-close-button
             position: absolute
@@ -30,6 +32,12 @@
             height: 100%
             overflow: hidden
             border-radius: 8px
+
+            &.top-align
+                display: table
+
+                img
+                    object-position: top
 
             img
                 width: 100%

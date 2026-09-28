@@ -11,7 +11,7 @@ layout: "page.11ty.js"
 <div id="cast-container">
 
 <div class="cast-person">
-	<div class="headshot"><img src="/assets/imgs/scoot-mcnairy.png" class="css-11l0dnl"></div>
+	<div class="headshot"><img src="/assets/imgs/scoot-sm.png" class="css-11l0dnl"></div>
 	<div class="cast-person-content">
 		<h3>SCOOT MCNAIRY as Lance</h3>
 		<p>Lance is a sprinkler man trapped in a town plagued by drought, Lance struggles to escape the grip of a shady developer and build a new life for him and his family.</p>
@@ -38,7 +38,7 @@ layout: "page.11ty.js"
 </div>
 
 <div class="cast-person">
-	<div class="headshot"><img src="/assets/imgs/dallas-goldtooth.png" class="css-11l0dnl"></div>
+	<div class="headshot top-align"><img src="/assets/imgs/Dallas_Goldtooth.jpg" class="css-11l0dnl"></div>
 	<div class="cast-person-content">
 		<h3>DALLAS GOLDTOOTH as Ouray</h3>
 		<p>Ouray runs a sustainable farm on the outskirts of town and does standup at the local rec center. He is the father of Kaiya, the girl Maya is accused of injuring.</p>
@@ -65,7 +65,7 @@ layout: "page.11ty.js"
 </div>
 
 <div class="cast-person">
-	<div class="headshot"><img src="/assets/imgs/alysia-reiner.png" class="css-11l0dnl"></div>
+	<div class="headshot top-align"><img src="/assets/imgs/Alysia_Reiner_2017_cropped.jpg" class="css-11l0dnl"></div>
 	<div class="cast-person-content">
 		<h3>ALYSIA REINER as Kay</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar malesuada massa a tincidunt. Praesent gravida egestas dui vel tristique. Praesent vel augue a nisl suscipit posuere ac nec ipsum.</p>
