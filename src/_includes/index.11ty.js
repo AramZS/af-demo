@@ -31,6 +31,7 @@ module.exports = async function (data) {
 	<div class="index-video-bg" aria-hidden="true">
 		<video class="index-video-bg__media" muted loop autoplay="autoplay" preload="auto" aria-hidden="true" crossorigin="anonymous" controlslist="nodownload" playsinline="" poster="/assets/imgs/split-img.jpg">
 			<source src="/assets/wbsite_sizzle_v3.webm" type="video/webm">
+			<source src="/assets/wbsite_sizzle_v3.mp4" type="video/mp4">
 		</video>
 	</div>
 	<div class="home" id="film">
