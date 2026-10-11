@@ -3,10 +3,11 @@ const metadata = require("../_data/metadata.js");
 const meta = require("./partials/meta.11ty");
 const nav = require("./partials/nav.11ty");
 const footer = require("./partials/footer.11ty");
+const seo = require("./partials/seo.11ty.js");
 
 module.exports = async function (data, zones) {
 
-	let meta_description = data?.description || data.site?.description || "";
+	let meta_description = data?.description || data.metadata?.description || "";
 	let metaChunk = meta(
 		data,
 		`${data.site.title}`,
@@ -48,8 +49,7 @@ module.exports = async function (data, zones) {
 		<link  hx-preserve="true" rel="manifest" href="/site.webmanifest">
 		<meta name="msapplication-TileColor" content="#1f1836">
 		<meta name="theme-color" content="#1f1836">
-
-		<link rel="canonical" href="${canonical}" />
+		 ${await seo(data, zones)}
 		<script async src="https://player.vimeo.com/api/player.js" type="application/javascript" hx-preserve="true" onload="window.vimeoPlayerActivation()"></script>
 
 		<script src="/assets/scripts/vimeo-player-activation.js" type="application/javascript" hx-preserve="true"></script>

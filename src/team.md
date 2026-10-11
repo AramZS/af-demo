@@ -11,7 +11,7 @@ layout: "page.11ty.js"
 <h3>Jack Fessenden</h3>
 
 <div class="cast-person">
-	<div class="headshot"><img src="/assets/imgs/jack-headshot.png" class="css-11l0dnl"></div>
+	<div class="headshot"><img src="/assets/imgs/jack-headshot.jpg" class="css-11l0dnl"></div>
 	<div class="headshot-descrip">Director JACK FESSENDEN is cited as one of “11 Great Indie Filmmakers 30 and Under You Need to Know” by IndieWire, Jack directed his first feature, Stray Bullets, during high school. Starring James Le Gros and Kevin Corrigan, Stray Bullets was heralded by Hollywood Reporter as a “strikingly impressive…blazingly confident debut”. His second feature, Foxhole (2021), “achieves an almost abstract beauty” (MoMA) is the winner of the Woodstock Film Festival’s ‘Best Ultra Indie’ award, and was distributed by Samuel Goldwyn Films. Jack employs genre to tell issue-driven stories about characters grappling with a world on edge.</div>
 </div>
 
