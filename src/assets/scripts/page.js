@@ -97,23 +97,27 @@ function setupImageClickEffects() {
 		}
 		if (event.target.tagName === "IMG" && event.target.parentElement.classList.contains("headshot") && !event.target.parentElement.parentElement.classList.contains("headshot-overlay-active")) {
 			// Support machines like phones that do not have hover
-			console.log('Headshot clicked', event.target, event.target.parentElement);
-			event.target.parentElement.parentElement.classList.toggle("headshot-overlay-active");
+			const headshot = event.target.parentElement;
+			const castPerson = headshot.parentElement;
+			castPerson.classList.add("headshot-overlay-active");
 			let closeButton = document.createElement("div");
 			closeButton.innerHTML = "&times;";
 
 			closeButton.className = "modal-close-button";
-			event.target.parentElement.appendChild(closeButton);
-			closeButton.addEventListener("click", function () {
+			headshot.appendChild(closeButton);
+
+			const closeOverlay = function (e) {
+				// iOS Safari does not reliably fire a synthetic "click" on a
+				// dynamically-created div, so also handle "touchend". preventDefault
+				// stops the synthetic click that would otherwise re-open the overlay.
+				e.preventDefault();
+				e.stopPropagation();
 				closeButton.remove();
-				event.target.parentElement.parentElement.classList.remove("headshot-overlay-active");
-			});
-			event.target.parentElement.parentElement.addEventListener("click", function () {
-				if (closeButton){
-					closeButton.remove();
-					event.target.parentElement.parentElement.classList.remove("headshot-overlay-active");
-				}
-			});
+				castPerson.classList.remove("headshot-overlay-active");
+			};
+
+			closeButton.addEventListener("click", closeOverlay);
+			closeButton.addEventListener("touchend", closeOverlay);
 		}
 	});
 }
