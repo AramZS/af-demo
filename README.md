@@ -27,13 +27,14 @@ ffmpeg -i src/assets/wbsite_sizzle_v3.webm \
   -c:v libvpx-vp9 -crf 36 -b:v 0 -an \
   src/assets/wbsite_sizzle_v3-mobile.webm
 ```
+
+## Example source block
+
 <div class="index-video-bg" aria-hidden="true">
-    <video class="index-video-bg__media" muted loop autoplay playsinline
-        preload="auto" aria-hidden="true" crossorigin="anonymous"
-        controlslist="nodownload" poster="/assets/imgs/split-img.jpg"
-        data-src-desktop-webm="/assets/wbsite_sizzle_v3.webm"
-        data-src-desktop-mp4="/assets/wbsite_sizzle_v3.mp4"
-        data-src-mobile-webm="/assets/wbsite_sizzle_v3-mobile.webm"
-        data-src-mobile-mp4="/assets/wbsite_sizzle_v3-mobile.mp4">
-    </video>
+		<video class="index-video-bg__media" muted loop autoplay="autoplay" preload="auto" aria-hidden="true" crossorigin="anonymous" controlslist="nodownload" playsinline="" poster="/assets/imgs/split-img.jpg">
+			<source src="/assets/wbsite_sizzle_v3-mobile.mp4"  type="video/mp4"  media="(max-width: 768px)">
+			<source src="/assets/wbsite_sizzle_v3-mobile.webm" type="video/webm" media="(max-width: 768px)">
+			<source src="/assets/wbsite_sizzle_v3.mp4"  type="video/mp4">
+			<source src="/assets/wbsite_sizzle_v3.webm" type="video/webm">
+		</video>
 </div>

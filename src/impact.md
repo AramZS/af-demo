@@ -11,7 +11,12 @@ layout: "page.11ty.js"
 <h2 id="impact-subhead">“To solve the climate crisis, we must first solve the crisis of imagination”</h2> 
 	<h3 id="pull-quote-credit">- REVEREND LENNOX YEARWOOD JR. (Producer)</h3> 
 
-<video id="rev-video-impact" src="/assets/Rev-Yearwood-5-26-26-small.webm" controls></video>
+<video id="rev-video-impact" aria-hidden="true" crossorigin="anonymous" controls playsinline="">
+	<source src="/assets/Rev-Yearwood-5-26-26-small-mobile.mp4"  type="video/mp4"  media="(max-width: 768px)">
+	<source src="/assets/Rev-Yearwood-5-26-26-small-mobile.webm" type="video/webm" media="(max-width: 768px)">
+	<source src="/assets/Rev-Yearwood-5-26-26-small.mp4"  type="video/mp4">
+	<source src="/assets/Rev-Yearwood-5-26-26-small.webm" type="video/webm">
+</video>
 
 A key partner of our impact mission, Reverend Lennox Yearwood is the President & CEO of Hip Hop Caucus — a national nonprofit, nonpartisan organization celebrating 20 years of advancing civil and human rights through hip-hop culture. He is a Senior Advisor for Bloomberg Philanthropies and is one of today’s most innovative advocates for racial and climate justice. He was one of 50 changemakers selected for Forbes’ inaugural Sustainability Leaders list in 2024. At a fundraising event in May, he presented a video with a call to action to fund stories like ALFALFA  that can, and must, reach new audiences. You can watch Rev’s video below.
 
