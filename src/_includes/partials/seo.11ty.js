@@ -1,20 +1,22 @@
+const JSONLDHeader = require("./json-ld-header.11ty.js");
 function seoDefaulter(page, siteData){
 
 	const seoDataExtracted = { ...siteData, ...siteData.metadata, ...page };
 	seoDataExtracted.page = seoDataExtracted.page || {};
 	seoDataExtracted.page.date = new Date();
+	seoDataExtracted.cover_image = seoDataExtracted.cover_image || siteData.metadata.defaultSocialImage;
 	return seoDataExtracted;
 }
 
 module.exports = async function(data, zones) {
   // console.log("layout data", data);
   let seoObject = seoDefaulter(data.page, data.site);
+  let me = data.me;
 
   const {
     title,
     metadata,
     description,
-    me,
     cite,
     page,
     linkInternal,
@@ -26,13 +28,12 @@ module.exports = async function(data, zones) {
     tags,
     ogImageHref,
     cover_image,
-    readingTime,
     contentType,
   } = seoObject;
 
   const mainPageUrl = `${metadata?.url || ""}${page?.url || ""}`;
 
-  // Calculate Open Graph Type
+  // Calculate Open Graph Typewashing
   let ogtype = data.ogtype || "website";
   if (mediaType === "film") {
     ogtype = "video.movie";
@@ -54,11 +55,6 @@ module.exports = async function(data, zones) {
 
   // Article-specific meta tags
   const articleMeta = ogtype === "article" ? `
-      <meta name="twitter:label1" content="Words" />
-      <meta name="twitter:data1" content="${readingTime?.words}" />
-
-      <meta name="twitter:label2" content="Est. reading time" />
-      <meta name="twitter:data2" content="${readingTime?.time}" />
 
       ${page?.date ? `<meta name="article:published_time" content="${page.date.toISOString()}" />` : ""}
       <meta name="article:author" content="${me?.name}" />
@@ -114,9 +110,9 @@ module.exports = async function(data, zones) {
       <meta name="twitter:site" content="@Chronotope" />
       <meta name="twitter:creator" content="@Chronotope" />
       <meta name="twitter:title" content="${title || metadata?.title}" />
-
       <!-- Article Specific Meta -->
       ${articleMeta}
+	  ${JSONLDHeader(data)}
 
   `;
 };
