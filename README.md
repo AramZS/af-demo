@@ -28,6 +28,14 @@ ffmpeg -i src/assets/wbsite_sizzle_v3.webm \
   src/assets/wbsite_sizzle_v3-mobile.webm
 ```
 
+Note -an removes audio. 
+
+### Create a poster image with 
+
+```
+ffmpeg -i src/assets/Rev-Yearwood-5-26-26-small.webm -frames:v 1 -vf "scale='iw*sar':ih,setsar=1" -q:v 2 src/assets/imgs/rev-poster.jpg
+``
+
 ## Example source block
 
 <div class="index-video-bg" aria-hidden="true">

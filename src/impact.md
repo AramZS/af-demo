@@ -11,7 +11,7 @@ layout: "page.11ty.js"
 <h2 id="impact-subhead">“To solve the climate crisis, we must first solve the crisis of imagination”</h2> 
 	<h3 id="pull-quote-credit">- REVEREND LENNOX YEARWOOD JR. (Producer)</h3> 
 
-<video id="rev-video-impact" aria-hidden="true" crossorigin="anonymous" controls playsinline="">
+<video id="rev-video-impact" aria-hidden="true" crossorigin="anonymous" controls playsinline="" poster="/assets/imgs/rev-poster.jpg">
 	<source src="/assets/Rev-Yearwood-5-26-26-small-mobile.mp4"  type="video/mp4"  media="(max-width: 768px)">
 	<source src="/assets/Rev-Yearwood-5-26-26-small-mobile.webm" type="video/webm" media="(max-width: 768px)">
 	<source src="/assets/Rev-Yearwood-5-26-26-small.mp4"  type="video/mp4">
