@@ -54,10 +54,36 @@ function setupIndexBackgroundVideo() {
 	syncVideoState();
 }
 
-function setupImageClickEffects() {
+function closeModals(closeButton, targetClose) {
+				const closeOverlay = function (e) {
+				// iOS Safari does not reliably fire a synthetic "click" on a
+				// dynamically-created div, so also handle "touchend". preventDefault
+				// stops the synthetic click that would otherwise re-open the overlay.
+				e.preventDefault();
+				e.stopPropagation();
+				closeButton.remove();
+				targetClose.classList.remove("headshot-overlay-active");
+			};
+
+			closeButton.addEventListener("click", closeOverlay);
+			closeButton.addEventListener("touchend", closeOverlay);
+}
+
+function setupImageClickEffects(event) {
 	// Listen for every click on an IMG element.
-	document.addEventListener("click", function (event) {
 		if (window["image-container-modal"]) {
+			return;
+		}
+		if (!(event.target.tagName === "IMG" && event.target.classList.contains("magnifiable")) && !(event.target.tagName === "IMG" && event.target.parentElement.classList.contains("headshot") && !event.target.parentElement.parentElement.classList.contains("headshot-overlay-active"))) {
+			event.preventDefault();
+			event.stopPropagation();
+			document.querySelectorAll(".headshot-overlay-active").forEach(el => {
+				el.classList.remove("headshot-overlay-active")
+				const closeBtn = el.querySelector(".modal-close-button");
+				if (closeBtn) {
+					closeBtn.remove();
+				}
+			});
 			return;
 		}
 		// Check if the clicked element is an IMG.
@@ -85,13 +111,16 @@ function setupImageClickEffects() {
 				window.document.body.style.overflow = "auto";
 			});
 
-			// Close the modal when clicking outside the image.
-			modal.addEventListener("click", function (e) {
+			let closeImgModal = function (e) {
 				if (e.target === modal) {
 					modal.remove();
 					window.document.body.style.overflow = "auto";
 				}
-			});
+			}
+
+			// Close the modal when clicking outside the image.
+			modal.addEventListener("click", closeImgModal);
+			document.addEventListener("touchend", closeImgModal);
 			window.document.body.style.overflow = "hidden";
 			document.body.appendChild(modal);
 		}
@@ -101,27 +130,17 @@ function setupImageClickEffects() {
 			const castPerson = headshot.parentElement;
 			castPerson.classList.add("headshot-overlay-active");
 			let closeButton = document.createElement("div");
-			closeButton.innerHTML = "&times;";
+			// closeButton.innerHTML = "📌";
 
 			closeButton.className = "modal-close-button";
 			headshot.appendChild(closeButton);
 
-			const closeOverlay = function (e) {
-				// iOS Safari does not reliably fire a synthetic "click" on a
-				// dynamically-created div, so also handle "touchend". preventDefault
-				// stops the synthetic click that would otherwise re-open the overlay.
-				e.preventDefault();
-				e.stopPropagation();
-				closeButton.remove();
-				castPerson.classList.remove("headshot-overlay-active");
-			};
+			closeModals(closeButton, castPerson);
 
-			closeButton.addEventListener("click", closeOverlay);
-			closeButton.addEventListener("touchend", closeOverlay);
+
 		}
-	});
 }
 
 setupIndexBackgroundVideo();
-setupImageClickEffects();
-
+document.addEventListener("click", setupImageClickEffects);
+document.addEventListener("touchend", setupImageClickEffects);

@@ -1,3 +1,5 @@
+@use 'variables' as *
+
 #cast
 
     #cast-container
@@ -20,12 +22,18 @@
             position: absolute
             top: 20px
             right: 30px
-            font-size: 40px
+            font-size: 30px
             padding: 0 10px 5px
-            border: 1px solid #f0f0f040
             color: #fff
             cursor: pointer
             z-index: 100
+            // Render the 📌 emoji in black and white
+            filter: grayscale(1)
+
+            &::before
+                content: "📌"
+                @media (max-width: $large-mobile)
+                    content: "×"
 
         .headshot
             width: 100%
