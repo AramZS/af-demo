@@ -84,7 +84,7 @@ function setupImageClickEffects(event) {
 		if (window["image-container-modal"]) {
 			return;
 		}
-		if (!(event.target.tagName === "IMG" && event.target.classList.contains("magnifiable")) && !(event.target.tagName === "IMG" && event.target.parentElement.classList.contains("headshot") && !event.target.parentElement.parentElement.classList.contains("headshot-overlay-active"))) {
+		if (document.querySelector(".modal-close-button") && !(event.target.tagName === "IMG" && event.target.classList.contains("magnifiable")) && !(event.target.tagName === "IMG" && event.target.parentElement.classList.contains("headshot") && !event.target.parentElement.parentElement.classList.contains("headshot-overlay-active"))) {
 			event.preventDefault();
 			event.stopPropagation();
 			document.querySelectorAll(".headshot-overlay-active").forEach(el => {
