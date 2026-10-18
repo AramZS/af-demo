@@ -35,7 +35,8 @@ let data = {
 		cast: "cast",
 		impact: "impact",
 		funds: "funds",
-	}
+	},
+	footerCopyrightEntity: process.env.FOOTER_COPYRIGHT_ENTITY || "Alfalfa LLC"
 };
 
 
