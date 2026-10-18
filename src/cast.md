@@ -69,7 +69,7 @@ layout: "page.11ty.js"
 	<div class="cast-person-content">
 		<h3>ALYSIA REINER as Kay</h3>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pulvinar malesuada massa a tincidunt. Praesent gravida egestas dui vel tristique. Praesent vel augue a nisl suscipit posuere ac nec ipsum.</p>
-		<p>Previous credits include: <em>Consectetur, Adipisicing, Elit</em></p>
+		<p>Previous credits include: <em>Orange is the New Black, Sideways</em></p>
 	</div>
 </div>
 
