@@ -54,19 +54,29 @@ function setupIndexBackgroundVideo() {
 	syncVideoState();
 }
 
-function closeModals(closeButton, targetClose) {
-				const closeOverlay = function (e) {
-				// iOS Safari does not reliably fire a synthetic "click" on a
-				// dynamically-created div, so also handle "touchend". preventDefault
-				// stops the synthetic click that would otherwise re-open the overlay.
-				e.preventDefault();
-				e.stopPropagation();
-				closeButton.remove();
-				targetClose.classList.remove("headshot-overlay-active");
-			};
+function closeModals(closeButton, targetClose, event, triggerGo) {
+	const closeOverlay = function () {
+		// iOS Safari does not reliably fire a synthetic "click" on a
+		// dynamically-created div, so also handle "touchend". preventDefault
+		// stops the synthetic click that would otherwise re-open the overlay.
+		closeButton.remove();
+		console.log("Closing overlay for headshot", targetClose);
+		targetClose.classList.remove("headshot-overlay-active");
+		var overlay = targetClose.querySelector('.headshot');
+		overlay.classList.remove("headshot");
+		setTimeout(() => {
+			overlay.classList.add("headshot");
+		}, 3000);
+	};
+	if (triggerGo) {
+		closeOverlay();
+		return;
+	}
+	event.preventDefault();
+	event.stopPropagation();
 
-			closeButton.addEventListener("click", closeOverlay);
-			closeButton.addEventListener("touchend", closeOverlay);
+	closeButton.addEventListener("click", closeOverlay);
+	closeButton.addEventListener("touchend", closeOverlay);
 }
 
 function setupImageClickEffects(event) {
@@ -80,9 +90,7 @@ function setupImageClickEffects(event) {
 			document.querySelectorAll(".headshot-overlay-active").forEach(el => {
 				el.classList.remove("headshot-overlay-active")
 				const closeBtn = el.querySelector(".modal-close-button");
-				if (closeBtn) {
-					closeBtn.remove();
-				}
+				closeModals(closeBtn, el, null, true);
 			});
 			return;
 		}
@@ -135,7 +143,7 @@ function setupImageClickEffects(event) {
 			closeButton.className = "modal-close-button";
 			headshot.appendChild(closeButton);
 
-			closeModals(closeButton, castPerson);
+			closeModals(closeButton, castPerson, event, false);
 
 
 		}
