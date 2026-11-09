@@ -54,6 +54,16 @@ collections:
           - { label: "Page Types", name: "internalPageTypes", widget: "hidden"}
           - { label: "Layout", name: "layout", widget: "hidden"}          
           - { label: "Body", name: "body", widget: "markdown", hint: "Plain text, Markdown, and HTML formatting is supported. See the Markdown cheat sheet: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" }
+      - name: index
+        label: Top Section
+        file: /src/index.md
+        fields:
+          - { name: title, label: Title }
+          - { label: "Permalink", name: "permalink", widget: "hidden" }
+          - { label: "Path", name: "path", widget: "hidden" }
+          - { label: "Page Types", name: "internalPageTypes", widget: "hidden"}
+          - { label: "Layout", name: "layout", widget: "hidden"}          
+          - { label: "Body", name: "body", widget: "richtext", hint: "Plain text, richtext, and HTML formatting is supported." }
   - name: "blog"
     label: "Posts"
     label_singular: "Post"
@@ -63,7 +73,7 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Author", name: "author", widget: "relation", collection: "authors", value_field: "name" }
+      # - { label: "Author", name: "author", widget: "relation", collection: "authors", value_field: "name" }
       - { label: "Summary", name: "summary", widget: "text" }
       - { label: "Tags", name: "tags", widget: "list", default: ["post"], hint: "Enter tags separated by a comma" }
       - label: "Image"
@@ -94,23 +104,6 @@ collections:
           - { label: "Title", name: "title", widget: "string", hint: "The visible title of the navigation item." }
           - { label: "Order", name: "order", widget: "number", default: 999, hint: "Set a number between 0 and 999 to set the display order of your navigation item." }
       - { label: "Body", name: "body", widget: "markdown", hint: "Plain text, Markdown, and HTML formatting is supported. See the Markdown cheat sheet: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" }
-  - name: "authors"
-    label: "Authors"
-    label_singular: "Author"
-    icon: "person"
-    folder: "authors"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Name", name: "name", widget: "string" }
-      - label: "Image"
-        name: "image"
-        widget: "image"
-        hint: "Upload an image for this author (max. 1MB). You can also use an image URL."
-        media_library:
-          config:
-            max_file_size: 1024000 # maximum image file size in bytes
-      - { label: "Description", name: "body", widget: "markdown", hint: "Plain text, Markdown, and HTML formatting is supported. See the Markdown cheat sheet: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" }
   - name: "siteconfig"
     label: "Site Configuration"
     icon: "settings"
@@ -137,4 +130,14 @@ collections:
             fields:
               - { label: "Navigation Item", name: "name", field: { widget: "string", hint: "The item appearing in navigation" }  }
               - { label: "Linked Page", name: "pageFilename", field: { widget: "string", hint: "The filename given in the section edit area" } }          
+      - file: "src/_data/homepage.json"
+        label: "Top-of-homepage Text"
+        name: "homepage"
+        summary: "Text from the top of the site"
+        fields:
+          - { label: "Title", name: "title", widget: "string", hint: "Displayed title" }
+          - { label: "Subtitle", name: "subtitle", widget: "string", hint: "Displayed subtitle" }
+          - { label: "Left Top Text", name: "homepageLeft", widget: "string", hint: "Left text" }
+          - { label: "Right Top Text", name: "homepageRight", widget: "string", hint: "Right text" }
+          - { label: "Scroll Down Prompt", name: "scrollDownPrompt", widget: "string", hint: "Scroll Down floating prompt text" }          
 

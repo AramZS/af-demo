@@ -45,20 +45,20 @@ module.exports = async function (data) {
 		<section class="hero scroll-hint-container">
 			<div class="scroll-hint">
 				<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
-				Scroll down
+				${data.homepage.scrollDownPrompt}
 			</div>
 		</section>
 		<section class="hero title-section">
-			<h1 class="center">ALFALFA</h1>
-			<h3 class="center">An eco-noir</h3>
+			<h1 class="center">${data.homepage.title}</h1>
+			<h3 class="center">${data.homepage.subtitle}</h3>
 		</section>		
 		<section class="hero flex-left">
 			<!--  <p class="sub-title">SUBTITLE</p>  
 			<a href="#" class="btn">SOME BUTTON</a> -->
-			<p class="left">where water is most scarce....</p>
+			<p class="left">${data.homepage.homepageLeft}</p>
 		</section>
 		<section class="hero flex-right">
-			<p class="right">America grows its thirstiest crop</p>
+			<p class="right">${data.homepage.homepageRight}</p>
 		</section>
 
 	</div>
