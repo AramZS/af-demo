@@ -1,0 +1,28 @@
+{
+  "nav": [
+    {
+      "name": "Film",
+      "pageFilename": "film"
+    },
+    {
+      "name": "Teaser",
+      "pageFilename": "teaser"
+    },
+    {
+      "name": "Team",
+      "pageFilename": "team"
+    },
+    {
+      "name": "Cast",
+      "pageFilename": "cast"
+    },
+    {
+      "name": "Impact",
+      "pageFilename": "impact"
+    },
+    {
+      "name": "Funds",
+      "pageFilename": "funds"
+    }
+  ]
+}
