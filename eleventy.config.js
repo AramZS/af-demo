@@ -605,13 +605,13 @@ ${string}
     </div>
   </article>`;
 		}
-		return /*html*/ `<div class="photoset photoshow">
+		return /*html*/ `<div class="photo-collection"><div class="photoset photoshow">
 <div class="cards">
 
 ${string}
 
 </div>
-		</div>`;
+		</div></div>`;
 	});
 
 	eleventyConfig.addPlugin(require("eleventy-plugin-dart-sass"), {
