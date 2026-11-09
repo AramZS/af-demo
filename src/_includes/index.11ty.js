@@ -8,7 +8,12 @@ module.exports = async function (data) {
 	allMarkdownPages.forEach((page) => {
 		console.log("page", page);
 	});
-	let renderingQueue = Object.values(data.nav);
+	const navItems = data.navList.nav;
+	let navPages = [];
+	for (const { name, pageFilename } of navItems) {
+		navPages.push(pageFilename);
+	}	
+	let renderingQueue = navPages;
 	let renderPromises = {};
 	for (const item of renderingQueue) {
 		let page = allMarkdownPages.find((page) => page.idSlug === item);

@@ -1,9 +1,9 @@
 module.exports = function (data, title, description, tagSet, imgUrls) {
 
-	const navItems = data.nav;
+	const navItems = data.navList.nav;
 	let navHtml = "";
-	for (const [key, value] of Object.entries(navItems)) {
-		navHtml += `<li><a href="#${value}">${key}</a></li>`;
+	for (const { name, pageFilename } of navItems) {
+		navHtml += `<li><a href="#${pageFilename}">${name}</a></li>`;
 	}
 	return /*html*/ `<!-- Nav Block -->
 	<nav>
