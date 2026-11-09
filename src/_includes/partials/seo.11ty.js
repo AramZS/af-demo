@@ -1,16 +1,21 @@
 const JSONLDHeader = require("./json-ld-header.11ty.js");
-function seoDefaulter(page, siteData){
 
-	const seoDataExtracted = { ...siteData, ...siteData.metadata, ...page };
+// Validators: 
+// https://validator.schema.org/#url=https%3A%2F%2Falfalfathemovie.com%2F
+// https://search.google.com/test/rich-results/result?id=c51y3BTTiNlrK6Xvm1mGpw
+
+function seoDefaulter(page, siteData, metadata){
+
+	const seoDataExtracted = { ...siteData, ...metadata, ...page };
 	seoDataExtracted.page = seoDataExtracted.page || {};
 	seoDataExtracted.page.date = new Date();
-	seoDataExtracted.cover_image = seoDataExtracted.cover_image || siteData.metadata.defaultSocialImage;
+	seoDataExtracted.cover_image = seoDataExtracted.cover_image || metadata.defaultSocialImage;
 	return seoDataExtracted;
 }
 
 module.exports = async function(data, zones) {
   // console.log("layout data", data);
-  let seoObject = seoDefaulter(data.page, data.site);
+  let seoObject = seoDefaulter(data.page, data.site, data.metadata);
   let me = data.me;
 
   const {

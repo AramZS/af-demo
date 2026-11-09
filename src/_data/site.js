@@ -1,5 +1,4 @@
 require("dotenv").config();
-const metadata = require("../_data/metadata.js");
 
 let randomVer = () => {
 	// eslint-disable-next-line no-bitwise
@@ -10,33 +9,14 @@ let randomVer = () => {
 };
 
 let data = {
-	username: "Alfalfa", // No leading @ here
-	title: process.env.SITE_NAME,
-	description: process.env.DESCRIPTION,
-	homeUrl: "https://alfalfafilm.com/",
 	language: "en-US",
-	metadata: {
-		...metadata,
-	},
 	lang: "en-US",
 	github: {
 		build_revision: process.env.MY_GITHUB_RUN_ID || 1.0,
 		build_sha: process.env.GITHUB_SHA || 1,
 	},
-	site_url: process.env.DOMAIN,
 	domain: process.env.DOMAIN,
-	defaultImage: process.env.DOMAIN + "/assets/favicon.png",
 	serviceWorkerVer: `${randomVer()}-${Date.now()}`,
-	playOrder: "ascending", // ascending or descending
-	nav: {
-		film: "film",
-		teaser: "teaser",
-		team: "team",
-		cast: "cast",
-		impact: "impact",
-		funds: "funds",
-	},
-	footerCopyrightEntity: process.env.FOOTER_COPYRIGHT_ENTITY || "Alfalfa LLC"
 };
 
 

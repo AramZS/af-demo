@@ -1,0 +1,13 @@
+{
+	"siteName": "Alfalfa",
+	"username": "Alfalfa",
+	"corpName": "Alfalfa the Movie",
+	"homeLabel": "Alfalfa Film",
+	"url": "https://alfalfathemovie.com",
+	"homeUrl": "https://alfalfathemovie.com/",
+	"language": "en-US",
+	"title": "Alfalfa - an eco-noir film",
+	"description": "A weekend heat wave. A town facing a water crisis. Sprinkler man Lance's life reaches a tipping point when he is offered a lucrative, but ethically questionable, job growing alfalfa on parched desert land.",
+	"defaultSocialImage": "assets/imgs/default-social-image.png",
+	"footerCopyrightEntity": "Alfalfa LLC"
+}

@@ -5,12 +5,13 @@ var mila = require("markdown-it-link-attributes");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const slugger = require("./src/utils/slugger");
+const yaml = require("js-yaml");
 const sharp = require("sharp");
 const fs = require("fs");
 
 require("dotenv").config();
 
-let domain_name = process.env?.EXT_DOMAIN || "alfalfafilm.com";
+let domain_name = process.env?.EXT_DOMAIN || "alfalfathemovie.com";
 let throwOnUndefinedSetting = false;
 
 let scheme = "https://";
@@ -27,8 +28,6 @@ console.log("Building for site URL:", site);
 process.env.DOMAIN = site;
 process.env.DOMAIN_NAME = domain_name;
 process.env.SITE_NAME = "Alfalfa";
-process.env.DESCRIPTION =
-	"Alfalfa is about .";
 process.env.BASIC_IMAGE = `${domain_name}/imgs/split-img.jpg`;
 process.env.PRIMARY_AUTHOR = "Alfalfa Film";
 
@@ -43,9 +42,30 @@ module.exports = async function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy(".nojekyll");
 	eleventyConfig.addPassthroughCopy("CNAME");
 	eleventyConfig.addPassthroughCopy("src/img/");
+
 	eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 	eleventyConfig.addPlugin(HtmlBasePlugin);
 	eleventyConfig.addPlugin(RenderPlugin);
+
+	//CMS Config - inspired by https://github.com/danurbanowicz/eleventy-sveltia-cms-starter/blob/master/.eleventy.js
+	eleventyConfig.addPassthroughCopy("admin/"); // don't process the CMS folder
+	// Add support for YAML data files with .yml extension
+	eleventyConfig.addDataExtension("yml", contents => yaml.load(contents));
+	// Merge data instead of overriding
+	// https://www.11ty.dev/docs/data-deep-merge/
+	eleventyConfig.setDataDeepMerge(true);
+	// Date formatting (human readable)
+	eleventyConfig.addFilter("readableDate", dateObj => {
+		return DateTime.fromJSDate(dateObj).toFormat("LLL d yyyy");
+	});
+	// Date formatting (machine readable)
+	eleventyConfig.addFilter("machineDate", dateObj => {
+		return DateTime.fromJSDate(dateObj).toFormat("yyyy-MM-dd");
+	});
+	// Disable 11ty dev server live reload when using CMS locally
+	eleventyConfig.setServerOptions({
+		liveReload: false
+	});		
 
 	eleventyConfig.setWatchThrottleWaitTime(5000);
 	eleventyConfig.on(

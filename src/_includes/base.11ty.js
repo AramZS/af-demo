@@ -1,4 +1,3 @@
-const metadata = require("../_data/metadata.js");
 // const site = require("../_data/site.js");
 const meta = require("./partials/meta.11ty");
 const nav = require("./partials/nav.11ty");
@@ -10,7 +9,7 @@ module.exports = async function (data, zones) {
 	let meta_description = data?.description || data.metadata?.description || "";
 	let metaChunk = meta(
 		data,
-		`${data.site.title}`,
+		`${data.metadata.title}`,
 		meta_description,
 		data?.tags ? data.tags : [],
 		data?.featuredImage
@@ -31,7 +30,7 @@ module.exports = async function (data, zones) {
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1">
-		<title>${data.title || data.site.title}</title>
+		<title>${data.title || data.metadata.title}</title>
 		<meta name="description" content="${meta_description}" />
 		${metaChunk}
 
