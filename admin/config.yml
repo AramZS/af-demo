@@ -5,6 +5,7 @@
 # Decap CMS docs: https://decapcms.org/docs/intro/
 # Sveltia CMS docs: https://github.com/sveltia/sveltia-cms#features
 # Sample: https://github.com/danurbanowicz/eleventy-sveltia-cms-starter/blob/master/admin/config.yml
+# Sample: https://github.com/sveltia/sveltia-cms-demo
 
 # Enter your GitHub repo path and branch (defaults to master)
 backend:
@@ -25,6 +26,7 @@ collections:
         file: /src/cast.md
         fields:
           - { name: title, label: Title }
+          - {name: "filename", label: "Filename", widget: "compute", value: "{{fields.path | plainify | slicer(1)}}"}
           - { label: "Permalink", name: "permalink", widget: "hidden" }
           - { label: "Path", name: "path", widget: "hidden" }
           - { label: "Page Types", name: "internalPageTypes", widget: "hidden"}
@@ -35,6 +37,7 @@ collections:
         file: /src/funds.md
         fields:
           - { name: title, label: Title }
+          - {name: "filename", label: "Filename", widget: "compute", value: "{{fields.path | plainify | slicer(1)}}"}
           - { label: "Permalink", name: "permalink", widget: "hidden" }
           - { label: "Path", name: "path", widget: "hidden" }
           - { label: "Page Types", name: "internalPageTypes", widget: "hidden"}
@@ -45,6 +48,7 @@ collections:
         file: /src/impact.md
         fields:
           - { name: title, label: Title }
+          - {name: "filename", label: "Filename", widget: "compute", value: "{{fields.path | plainify | slicer(1)}}"}
           - { label: "Permalink", name: "permalink", widget: "hidden" }
           - { label: "Path", name: "path", widget: "hidden" }
           - { label: "Page Types", name: "internalPageTypes", widget: "hidden"}
@@ -107,8 +111,8 @@ collections:
           config:
             max_file_size: 1024000 # maximum image file size in bytes
       - { label: "Description", name: "body", widget: "markdown", hint: "Plain text, Markdown, and HTML formatting is supported. See the Markdown cheat sheet: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" }
-  - name: "metadata"
-    label: "Site Information"
+  - name: "siteconfig"
+    label: "Site Configuration"
     icon: "settings"
     extension: "json"
     format: "json"
@@ -120,4 +124,17 @@ collections:
           - { label: "Site Name", name: "siteName", widget: "string", hint: "Your site's title, used for branding and SEO." }
           - { label: "Site Description", name: "description", widget: "text", hint: "Your site's description, used for SEO." }
           - { label: "Site URL", name: "url", widget: "string", hint: "Your live site's full URL." }
+      - file: "src/_data/navList.json"
+        label: "Navigation links"
+        name: "navList"
+        summary: "Navigation Items"
+        fields:
+          - label: Navigation List
+            name: nav
+            widget: list        
+            min: 1
+            max: 6
+            fields:
+              - { label: "Navigation Item", name: "name", field: { widget: "string", hint: "The item appearing in navigation" }  }
+              - { label: "Linked Page", name: "pageFilename", field: { widget: "string", hint: "The filename given in the section edit area" } }          
 

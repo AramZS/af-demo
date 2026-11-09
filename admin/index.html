@@ -8,5 +8,12 @@
   <body>
     <!-- Include the script that builds the page and powers Sveltia CMS -->
     <script src="sveltia-local.js"></script>
+	<script>
+		const transform = (value, { args, locale }) => {
+			// Return the transformed value
+			return value.slice(args[0]);
+		};
+		CMS.registerStringTransformation("slicer", transform);
+	</script>
   </body>
 </html>
